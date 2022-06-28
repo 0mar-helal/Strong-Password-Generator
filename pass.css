@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+}
+.generator {
+    width: 400px;
+    background-color: rgb(79, 3, 79);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+}
+input[type='text'] {
+    background-color: purple;
+    padding: 15px;
+    height: 60px;
+    color: white;
+    font-size: 25px;
+    border:none;
+    border-radius: 10px;
+}
+input[type='text']:focus {
+    outline: 1px solid rgb(79, 3, 79);
+}
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+label {
+    color: white;
+    font-size: 18px;
+}
+a.btn {
+    position: relative;
+    background-color: rgba(255, 255, 0, 0.839);
+    border-radius:10px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color:rgb(79, 3, 79);
+    opacity: 0.8;
+    transition: 0.5s;
+    overflow: hidden;
+}
+a.btn::before {
+    content: '';
+    position: absolute;
+    border-radius:10px;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 100%;
+    background-color: yellow;
+    z-index: -1;
+    transition: 0.3s;
+}
+a.btn:hover::before {
+    width: 100%;
+}
+
+/*  Create a custom checkbox  */
+.container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+}
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    background-color: #ccc;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+.container input:checked ~ .checkmark {
+    background-color: purple;
+    animation: pop 0.5s alternate;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*  Media Query  */
+@media (max-width:767px) {
+    .box {
+        width: 330px;
+    }
+    label {
+        font-size:16px ;
+    }
+    a.btn {
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+
+}
