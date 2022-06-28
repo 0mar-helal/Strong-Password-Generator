@@ -131,7 +131,7 @@ a.btn:hover::before {
 
 /*  Media Query  */
 @media (max-width:767px) {
-    .box {
+    .generator {
         width: 330px;
     }
     label {
