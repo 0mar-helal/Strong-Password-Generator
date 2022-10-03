@@ -11,14 +11,51 @@ body {
     align-items: center;
     background-color: purple;
 }
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width:375px) {
+    .container {
+        width:300px;
+    }
+} 
+@media (min-width:376px) and (max-width:575px) {
+    .container {
+        width: 350px;
+    }
+}
+@media (min-width:576px)  and (max-width:767px)  {
+    .container {
+        width: 700px;
+    }
+}
+@media (min-width:768px) and (max-width:991px) { 
+    .container {
+        width:970px;
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
 .generator {
-    width: 400px;
     background-color: rgb(79, 3, 79);
     padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+@media (max-width:575px) {
+    .generator {
+        width: 100%;
+    }
 }
 input[type='text'] {
     background-color: purple;
@@ -72,13 +109,13 @@ a.btn:hover::before {
 }
 
 /*  Create a custom checkbox  */
-.container input {
+.content input {
     position: absolute;
     opacity: 0;
     height: 0;
     width: 0;
 }
-.container {
+.content {
     display: block;
     position: relative;
     cursor: pointer;
@@ -95,7 +132,7 @@ a.btn:hover::before {
     transition: all 0.3s;
     border-radius: 5px;
 }
-.container input:checked ~ .checkmark {
+.content input:checked ~ .checkmark {
     background-color: purple;
     animation: pop 0.5s alternate;
 }
@@ -104,7 +141,7 @@ a.btn:hover::before {
     position: absolute;
     display: none;
 }
-.container input:checked ~ .checkmark:after {
+.content input:checked ~ .checkmark:after {
     display: block;
 }
 .checkmark:after {
@@ -131,9 +168,6 @@ a.btn:hover::before {
 
 /*  Media Query  */
 @media (max-width:767px) {
-    .generator {
-        width: 330px;
-    }
     label {
         font-size:16px ;
     }
@@ -141,5 +175,4 @@ a.btn:hover::before {
         padding: 10px 20px;
         font-size: 20px;
     }
-
 }

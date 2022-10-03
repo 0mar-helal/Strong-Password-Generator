@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Random Password Generator</title>
+    <link rel="stylesheet" href="pass.css">
+    <link rel="shortcut icon" href="key-icon.png" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <div class="generator">
+            <input type="text" value="" onclick="this.select();" readonly >
+            <div class="option">
+                <label>Password Length</label>
+                <select name="" id="">
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            <div class="option">
+                <label>Contains Uppercase Letters</label>
+                <label class="content">
+                    <input type="checkbox" checked="checked" data-value="upper">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+            <div class="option">
+                <label>Contains Lowercase Letters</label>
+                <label class="content">
+                    <input type="checkbox" checked="checked" data-value="lower">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+            <div class="option">
+                <label>Contains Numbers Letters</label>
+                <label class="content">
+                    <input type="checkbox" checked="checked" data-value="num">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+            <div class="option">
+                <label>Contains Symbol</label>
+                <label class="content">
+                    <input type="checkbox" checked="checked" data-value="symbol">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+            <a class="btn" href="#">Generate Password</a>
+        </div>
+    </div>
+    <script src="pass.js"></script>
+</body>
+</html>
